@@ -17,12 +17,18 @@ import {
   Center,
   Image,
   HStack,
+  VStack,
+  Text,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { isOpen, onOpen, onClose } from "@chakra-ui/hooks";
 import { useAuth0 } from "@auth0/auth0-react";
 import { AddIcon } from "@chakra-ui/icons";
-
+import { TbTruckDelivery } from "react-icons/tb";
+import { GrLocation } from "react-icons/gr";
+import { FaUserCircle } from "react-icons/fa";
+import { HiOutlineShoppingBag } from "react-icons/hi";
+import { CiSearch } from "react-icons/ci";
 const NavLink = ({ children }) => (
   <Link
     px={2}
@@ -43,22 +49,124 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <HStack
+        spacing={8}
+        alignItems="center"
+        justify={"center"}
+        h={16}
+        bg="red.500"
+        color="white"
+        fontSize="xl"
+        fontWeight="semi-bold"
+      >
+        <Text fontSize="3xl">TAKE AN EXTRA</Text>
+        <Text fontSize="4xl">40% OFF CLEARANCE</Text>
+        <Text fontSize="xl">USE CODE: EXTRA40</Text>
+      </HStack>
+      <Flex h="14" justify={"flex-end"} pr="20"
+       bg={useColorModeValue("gray.200", "gray.900")}>
+      
+        <HStack fontSize="3xl" spacing={6}>
+          <Stack direction={"row"} alignItems="center">
+            <TbTruckDelivery />
+            <Button
+              variant="ghost"
+              colorScheme="black"
+              onClick={onOpen}
+              fontSize="xl"
+            >
+             Track Order
+            </Button>
+          </Stack>
+          <Stack direction={"row"} alignItems="center">
+            <GrLocation />
+            <Button
+              variant="ghost"
+              colorScheme="black"
+              onClick={onOpen}
+              fontSize="xl"
+            >
+             Store Locator
+            </Button>
+          </Stack>
+          <Stack direction={"row"} alignItems="center">
+            <FaUserCircle />
+            <Button
+              variant="ghost"
+              colorScheme="black"
+              onClick={onOpen}
+              fontSize="xl"
+            >
+              Log in / Register
+            </Button>
+          </Stack>
+        </HStack>
+      </Flex>
+      <Box bg={useColorModeValue("white")} px={4} pr='10' pl='10'>
+        <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
           <Box display="flex" alignItems="center">
-            <Image src="..src/Components/ShoesStopperLogo.png" alt="Clarks" />
+            <Image
+              src="..src/Components
+            ShoesStopperLogo.png"
+              alt="Clarks"
+            />
+
             <HStack spacing={2} alignItems="center">
-              <Button variant="ghost" colorScheme="black" onClick={onOpen}> 
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
                 Women
               </Button>
-              <Button variant="ghost" colorScheme="black" onClick={onOpen}>
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
                 Men
               </Button>
-              <Button variant="ghost" colorScheme="black" onClick={onOpen}>
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
                 Kids
               </Button>
-              <Button variant="ghost" colorScheme="black" onClick={onOpen}>
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
                 Originals
+              </Button>
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
+                Accessories
+              </Button>
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
+                Sale
+              </Button>
+              <Button
+                variant="ghost"
+                colorScheme="black"
+                onClick={onOpen}
+                fontSize="xl"
+              >
+                Sustainablity
               </Button>
             </HStack>
           </Box>
@@ -66,43 +174,15 @@ export default function Navbar() {
           {/* <Button */}
 
           <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={7}>
+            <Stack direction={"row"} spacing={16}
+            alignItems="center"
+            fontSize={"5xl"}
+            >
+              <CiSearch />
+              <HiOutlineShoppingBag />
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
-
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={"full"}
-                  variant={"link"}
-                  cursor={"pointer"}
-                  minW={0}
-                >
-                  <Avatar
-                    size={"sm"}
-                    src={"https://avatars.dicebear.com/api/male/username.svg"}
-                  />
-                </MenuButton>
-                <MenuList alignItems={"center"}>
-                  <br />
-                  <Center>
-                    <Avatar
-                      size={"2xl"}
-                      src={"https://avatars.dicebear.com/api/male/username.svg"}
-                    />
-                  </Center>
-                  <br />
-                  <Center>
-                    <p>Username</p>
-                  </Center>
-                  <br />
-                  <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
-                </MenuList>
-              </Menu>
             </Stack>
           </Flex>
         </Flex>
