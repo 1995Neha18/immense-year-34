@@ -29,6 +29,7 @@ import { GrLocation } from "react-icons/gr";
 import { FaUserCircle } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiSearch } from "react-icons/ci";
+import { Divider } from "@chakra-ui/react";
 const NavLink = ({ children }) => (
   <Link
     px={2}
@@ -63,9 +64,12 @@ export default function Navbar() {
         <Text fontSize="4xl">40% OFF CLEARANCE</Text>
         <Text fontSize="xl">USE CODE: EXTRA40</Text>
       </HStack>
-      <Flex h="14" justify={"flex-end"} pr="20"
-       bg={useColorModeValue("gray.200", "gray.900")}>
-      
+      <Flex
+        h="14"
+        justify={"flex-end"}
+        pr="20"
+        bg={useColorModeValue("gray.200", "gray.900")}
+      >
         <HStack fontSize="3xl" spacing={6}>
           <Stack direction={"row"} alignItems="center">
             <TbTruckDelivery />
@@ -75,7 +79,7 @@ export default function Navbar() {
               onClick={onOpen}
               fontSize="xl"
             >
-             Track Order
+              Track Order
             </Button>
           </Stack>
           <Stack direction={"row"} alignItems="center">
@@ -86,7 +90,7 @@ export default function Navbar() {
               onClick={onOpen}
               fontSize="xl"
             >
-             Store Locator
+              Store Locator
             </Button>
           </Stack>
           <Stack direction={"row"} alignItems="center">
@@ -102,12 +106,12 @@ export default function Navbar() {
           </Stack>
         </HStack>
       </Flex>
-      <Box bg={useColorModeValue("white")} px={4} pr='10' pl='10'>
+      <Box bg={useColorModeValue("white")} px={4} pr="10" pl="10">
         <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
           <Box display="flex" alignItems="center">
             <Image
-              src="..src/Components
-            ShoesStopperLogo.png"
+              w={200}
+              src="https://gdurl.com/g_Em"
               alt="Clarks"
             />
 
@@ -174,9 +178,11 @@ export default function Navbar() {
           {/* <Button */}
 
           <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={16}
-            alignItems="center"
-            fontSize={"5xl"}
+            <Stack
+              direction={"row"}
+              spacing={16}
+              alignItems="center"
+              fontSize={"5xl"}
             >
               <CiSearch />
               <HiOutlineShoppingBag />
@@ -187,6 +193,12 @@ export default function Navbar() {
           </Flex>
         </Flex>
       </Box>
+     
+      <Stack direction="row" h="100px" p={4} bg={useColorModeValue("gray.300", "gray.700")} color={"brown"} alignItems="center"  >
+       <Text color={"brown"} pl={500} fontSize={"3xl"}>FREE SHIPPING ON ORDERS OVER $50</Text>
+        <Divider orientation="vertical" color={"brown"} />
+        <Text  color={"brown"}  pr={600} fontSize={"3xl"}>FREE RETURNS EVERYDAY</Text>
+      </Stack>
     </>
   );
 }
