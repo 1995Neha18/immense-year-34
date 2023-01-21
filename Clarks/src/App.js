@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import Navbar from "../src/Components/Navbar";
 import AllRoutes from "../src/Components/AllRoutes";
+import Midpage from "../src/pages/Midpage";  
 
 
 
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Navbar />
       <AllRoutes />
+      <Midpage />
     </div>
   );
 }
