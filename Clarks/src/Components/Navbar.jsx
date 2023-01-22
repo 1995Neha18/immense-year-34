@@ -55,7 +55,7 @@ export default function Navbar() {
         alignItems="center"
         justify={"center"}
         h={16}
-        bg="red.500"
+        bg={useColorModeValue("red.500", "gray.900")}
         color="white"
         fontSize="xl"
         fontWeight="semi-bold"

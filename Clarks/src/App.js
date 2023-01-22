@@ -5,6 +5,7 @@ import React from 'react';
 import Navbar from "../src/Components/Navbar";
 import AllRoutes from "../src/Components/AllRoutes";
 import Midpage from "../src/pages/Midpage";  
+import Footer from "../src/Components/Footer";
 
 
 
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <AllRoutes />
       <Midpage />
+      <Footer/>
     </div>
   );
 }
